@@ -5,3 +5,4 @@ commmit 3
 win dialog 1
 
 menu item 1
+menu item 2
