@@ -4,11 +4,11 @@
   "private": true,
   "description": "Sketch pad created with canvas",
   "dependencies": {
+    "proptypes": "^0.14.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "proptypes": "^0.14.4",
-    "socket.io-client": "^1.4.5",
+    "socket.io-client": "^2.1.1",
     "uuid": "^2.0.0"
   },
   "scripts": {
