@@ -206,6 +206,14 @@ We need to use these packages `proptypes`, `socket.io-client`, and `uuid`, so ad
   }
 ```
 
+### Add the Components
+
+1. `class App extends React.Component<IRecipeProps, IRecipeState>`
+2. `class SketchPad extends Component`
+3. Line
+4. Rectangle
+
+...
 
 ## Materials
 
