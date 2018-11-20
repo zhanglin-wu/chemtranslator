@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import { findDOMNode } from 'react-dom'
-import { Pencil, TOOL_PENCIL, Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './shapes'
+import { Line, TOOL_LINE, Rectangle, TOOL_RECTANGLE } from './shapes'
 import PropTypes from 'proptypes';
 
 export const toolsMap = {
-  [TOOL_PENCIL]: Pencil,
   [TOOL_LINE]: Line,
   [TOOL_RECTANGLE]: Rectangle,
-  [TOOL_ELLIPSE]: Ellipse
 };
 
 export default class SketchPad extends Component {
@@ -41,7 +39,7 @@ export default class SketchPad extends Component {
     fillColor: '',
     height: 500,
     size: 5,
-    tool: TOOL_PENCIL,
+    tool: TOOL_LINE,
     toolsMap,
     width: 500
   };
@@ -51,7 +49,6 @@ export default class SketchPad extends Component {
     this.initTool = this.initTool.bind(this);
     this.onMouseDown = this.onMouseDown.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
-    this.onDebouncedMove = this.onDebouncedMove.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
   }
 
@@ -80,16 +77,6 @@ export default class SketchPad extends Component {
     if (data && data[0] && this.props.onItemStart) {
       this.props.onItemStart.apply(null, data);
     }
-
-    if (this.props.onDebouncedItemChange) {
-      this.interval = setInterval(this.onDebouncedMove, this.props.debounceTime);
-    }
-  }
-
-  onDebouncedMove() {
-    if (typeof this.tool.onDebouncedMouseMove === 'function' && this.props.onDebouncedItemChange) {
-      this.props.onDebouncedItemChange.apply(null, this.tool.onDebouncedMouseMove());
-    }
   }
 
   onMouseMove(e) {
@@ -104,7 +91,7 @@ export default class SketchPad extends Component {
     if (data && data[0] && this.props.onCompleteItem) {
       this.props.onCompleteItem.apply(null, data);
     }
-    
+
     if (this.props.onDebouncedItemChange) {
       clearInterval(this.interval);
       this.interval = null;
