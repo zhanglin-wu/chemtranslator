@@ -21,10 +21,6 @@ export default class SketchPad extends Component {
     fillColor: PropTypes.string,
     height: PropTypes.number,
     items: PropTypes.array.isRequired,
-    onCompleteItem: PropTypes.func, // function(stroke:Stroke) { ... }
-    onDebouncedItemChange: PropTypes.func, // function(idStroke, points:Point[]) { ... }
-    onEveryItemChange: PropTypes.func, // function(idStroke:string, x:number, y:number) { ... }
-    onItemStart: PropTypes.func, // function(stroke:Stroke) { ... }
     size: PropTypes.number,
     tool: PropTypes.string,
     toolsMap: PropTypes.object,
@@ -74,28 +70,14 @@ export default class SketchPad extends Component {
 
   onMouseDown(e) {
     const data = this.tool.onMouseDown(...this.getCursorPosition(e), this.props.color, this.props.size, this.props.fillColor);
-    if (data && data[0] && this.props.onItemStart) {
-      this.props.onItemStart.apply(null, data);
-    }
   }
 
   onMouseMove(e) {
     const data = this.tool.onMouseMove(...this.getCursorPosition(e));
-    if (data && data[0] && this.props.onEveryItemChange) {
-      this.props.onEveryItemChange.apply(null, data);
-    }
   }
 
   onMouseUp(e) {
     const data = this.tool.onMouseUp(...this.getCursorPosition(e));
-    if (data && data[0] && this.props.onCompleteItem) {
-      this.props.onCompleteItem.apply(null, data);
-    }
-
-    if (this.props.onDebouncedItemChange) {
-      clearInterval(this.interval);
-      this.interval = null;
-    }
   }
 
   getCursorPosition(e) {
