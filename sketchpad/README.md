@@ -1,8 +1,28 @@
+# Learning Project - React App
+
+This is a small project for learning React, etc.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+We must install NodeJS and NPM, and make sure they are accessible from a command line.
+
+## Build And Run
+
+Here are the commands to build and run the app:
+```
+git clone https://github.com/zhanglin-wu/chemtranslator
+cd chemtranslator/simple-sketch
+npm install
+npm start
+```
+
+Usually, the npm will open this link in the web browser automatically, if it doesn't, we can open it manually:
+
+[http://localhost:3000](http://localhost:3000)
+
+## NPM Commands for Build, Run, and Test
 
 ### `npm start`
 
