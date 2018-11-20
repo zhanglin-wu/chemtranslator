@@ -56,8 +56,10 @@ class App extends React.Component<IRecipeProps, IRecipeState> {
 
     return (
       <div>
-        <h1>React SketchPad</h1>
-        <div style={{float:'left', marginRight:20}}>
+        <div style={{marginLeft:100, marginRight:40}}>
+          <h1>React SketchPad</h1>
+        </div>
+        <div style={{float:'left', marginLeft:10, marginRight:20}}>
           <SketchPad
             width={500}
             height={500}
