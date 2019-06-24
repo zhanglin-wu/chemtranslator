@@ -1,0 +1,13 @@
+@startuml
+package "Chemistry Translators" {
+    [ChemDraw CDX/CDXML]
+    [CT Files (MOL/RXN/SDF/RDF)]
+    [Microsoft Office (Word/PPT/Excel)]
+}
+
+[Chem Translators] --> [ChemDraw CDX/CDXML]
+[Chem Translators] --> [CT Files (MOL/RXN/SDF/RDF)]
+[Chem Translators] --> [Microsoft Office (Word/PPT/Excel)]
+
+[ChemDraw Service] <-- [Chem Translators]
+@enduml
