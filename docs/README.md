@@ -8,4 +8,4 @@ This is a description of ChemTranslator
 
 [Edit diagram](http://www.plantuml.com/plantuml/uml/SoWkIImgAStDuIf8JCvEJ4zLK7BEICtDB2ufgbG8AKhCAyv9BCalAbPIgEPI089eaAnBKMAvWhDBX3uG-_h4GYL25DmoSrAB5JHy_NtqWoByz8DTtFI3NDmqeGfyCvEByelpqqeK_DFICfDJ5JJ2yujIz0C2GlHTAv9JSu3gQhcum1OWsnoheAjhXzLU76hnEGMN7g9SnuLmH71gKHbGKQo2ZQwk0gQHN0wfUId0G0K0)
 
-![alternative text](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt)
+![alternative text](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/zhanglin-wu/chemtranslator/master/docs/diagrams/chemtranslator.txt)
